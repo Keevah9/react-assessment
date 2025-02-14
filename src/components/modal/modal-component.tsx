@@ -11,7 +11,7 @@ interface ModalProps {
 
 const Modalcomponent = ({ title }: ModalProps) => {
   const { hideModal } = useModalContext();
-  const { handleReset, gameState, currPlayer} = useGameContext();
+  const { handleReset, gameState, currPlayer, delayedGameOver} = useGameContext();
 const close = () => {
   hideModal();
   handleReset()

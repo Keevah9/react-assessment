@@ -24,7 +24,7 @@ export const Slot: React.FC<SlotProps> = ({ ch, x, y }) => {
           className="w-full h-full absolute"
           initial={{ y: -200, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: y * 0.1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: y * 0.1 }}
         />
       )}
     </div>

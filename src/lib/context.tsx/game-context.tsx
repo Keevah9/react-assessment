@@ -27,6 +27,7 @@ interface GameContextType {
   setBoard: React.Dispatch<React.SetStateAction<string[][]>>;
   setCurrPlayer: React.Dispatch<React.SetStateAction<string>>;
   setGameOver: React.Dispatch<React.SetStateAction<boolean>>
+  delayedGameOver: boolean
 }
 
 export const GameContext = createContext<GameContextType | undefined>(undefined);
@@ -38,6 +39,7 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
   const [strikeLine, setStrikeLine] = useState<string | null>(null);
   const [gameState, setGameState] = useState(GameState.inProgress);
   const [gameOver, setGameOver] = useState(false);
+  const [delayedGameOver, setDelayedGameOver] = useState(false);
 
   //connect 4
   const [board, setBoard] = useState<string[][]>(Array.from({ length: numRows }, () => Array(numCols).fill('')));
@@ -56,6 +58,18 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
       if (clickSound.current) clickSound.current.volume = 0.5;
     }
   }, []);
+
+  useEffect(() => {
+    if (gameOver) {
+      const timer = setTimeout(() => {
+        setDelayedGameOver(true);
+      }, 1000); 
+
+      return () => clearTimeout(timer); 
+    } else {
+      setDelayedGameOver(false);
+    }
+  }, [gameOver]);
 
   function checkWinner(
     tiles: (string | null)[],
@@ -212,6 +226,7 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
         setBoard, 
         setCurrPlayer, 
         setGameOver, 
+        delayedGameOver,
         handleMove, 
         tiles, 
         player, 

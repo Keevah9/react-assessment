@@ -4,7 +4,7 @@ import { Slot } from "./slot";
 import Modalcomponent from "../modal/modal-component";
 
 const ConnectBoard: React.FC = () => {
-  const { board, gameOver } = useGameContext();
+  const { board, delayedGameOver } = useGameContext();
 
   return (
     <div className="grid w-full mb-6 grid-cols-7 gap-2">
@@ -13,7 +13,7 @@ const ConnectBoard: React.FC = () => {
           <Slot key={`${rowIndex}-${colIndex}`} ch={ch} x={colIndex} y={rowIndex} />
         ))
       )}
-      {gameOver && <Modalcomponent title />}
+      {delayedGameOver && <Modalcomponent title />}
     </div>
   );
 };
