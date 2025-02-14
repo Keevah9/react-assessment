@@ -34,18 +34,18 @@ export const GameContext = createContext<GameContextType | undefined>(undefined)
 export const GameProvider = ({ children }: { children: ReactNode }) => {
   const [tiles, setTiles] = useState<(string | null)[]>(Array(9).fill(null));
   const [player, setPlayer] = useState(player_X);
+  const [currPlayer, setCurrPlayer] = useState('X');
   const [strikeLine, setStrikeLine] = useState<string | null>(null);
   const [gameState, setGameState] = useState(GameState.inProgress);
   const [gameOver, setGameOver] = useState(false);
 
   //connect 4
   const [board, setBoard] = useState<string[][]>(Array.from({ length: numRows }, () => Array(numCols).fill('')));
-  
-  const [currPlayer, setCurrPlayer] = useState('X');
 
   const gameOverSound = useRef<HTMLAudioElement | null>(null);
   const clickSound = useRef<HTMLAudioElement | null>(null);
 
+  // TicTacToe
   useEffect(() => {
     if (typeof window !== 'undefined') {
       gameOverSound.current = new Audio("/game-over.wav");
@@ -91,24 +91,6 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     setTiles(newTiles);
     setPlayer(player === player_X ? player_O : player_X);
   };
-
-  const handleMove = (col: number) => {
-    if (gameOver) return;
-  
-    const row = board.findIndex((r) => r[col] === '');
-  
-    if (row === -1) return; 
-  
-    const newBoard = [...board];
-    newBoard[row][col] = currPlayer;
-    setBoard(newBoard);
-  
-    if (checkWin(newBoard, row, col)) {
-      setGameOver(true);
-    } else {
-      setCurrPlayer(currPlayer === 'X' ? 'O' : 'X');
-    }
-  };  
 
   const handleReset = () => {
     setGameState(GameState.inProgress);
@@ -160,6 +142,25 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [gameState]);
 
+  //Connect 4 
+  const handleMove = (col: number) => {
+    if (gameOver) return;
+  
+    const row = board.findIndex((r) => r[col] === '');
+  
+    if (row === -1) return; 
+  
+    const newBoard = [...board];
+    newBoard[row][col] = currPlayer;
+    setBoard(newBoard);
+  
+    if (checkWin(newBoard, row, col)) {
+      setGameOver(true);
+    } else {
+      setCurrPlayer(currPlayer === 'X' ? 'O' : 'X');
+    }
+  };  
+
   const checkWin = (board: string[][], row: number, col: number) => {
     const directions = [
       { r: 0, c: 1 }, 
@@ -194,7 +195,6 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
   
     return false;
   };
-  
 
   return (
     <GameContext.Provider value={{  board, 
