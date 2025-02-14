@@ -8,7 +8,7 @@ import React from 'react';
 export default function Connect4() {
   return (
     <>
-      <HeroContainer img="/img/connect4.jpg">
+      <HeroContainer img="/img/connect.jpg">
         <h1 className="!text-center">Connect 4</h1>
         <div className="mt-5">
           <p className='mb-5'>Enjoy the Connect 4 Game</p>
