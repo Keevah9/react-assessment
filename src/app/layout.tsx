@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
-import Footer from "../Components/Global/Nav/Footer";
-import Header from "../Components/Global/Nav/Header";
-import { GameProvider } from "../lib/Context.tsx/GameContext";
-import { ModalProvider } from "../lib/Context.tsx/ModalContext";
+import Footer from "../components/global/nav/footer";
+import Header from "../components/global/nav/header";
+import { GameProvider } from "../lib/context.tsx/gameContext";
+import { ModalProvider } from "../lib/context.tsx/modalContext";
 
 export const metadata: Metadata = {
   title: "React games assessment",

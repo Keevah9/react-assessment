@@ -1,6 +1,6 @@
 import React from "react";
-import Tile from "./Tile";
-import Strike from "./Strike";
+import Tile from "./tile";
+import Strike from "./strike";
 
 interface BoardProps {
   tiles: Array<string | null>;

@@ -1,7 +1,7 @@
-import { useGameContext } from "../../lib/Context.tsx/GameContext";
+import { useGameContext } from "../../lib/context.tsx/gameContext";
 import React from "react";
-import Modal from "../Modal/Modal";
-import { Slot } from "./Slot";
+import Modal from "../modal/modal";
+import { Slot } from "./slot";
 
 const Board: React.FC = () => {
   const { board, gameOver } = useGameContext();

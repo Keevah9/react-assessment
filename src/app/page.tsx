@@ -1,6 +1,6 @@
-import Connect4 from "../Components/Connect4";
-import Hero from "../Components/Home/Hero";
-import Tictactoe from "../Components/Home/TicTacToe";
+import Connect4 from "../components/connect4";
+import Hero from "../components/home/hero";
+import Tictactoe from "../components/home/ticTacToe";
 
 
 export default function Home() {

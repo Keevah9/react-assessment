@@ -1,6 +1,6 @@
 import React from 'react'
-import PageHeader from '../Global/Common/PageHeader'
-import GameCard from '../Global/Common/GameCard'
+import PageHeader from '../global/common/pageHeader'
+import GameCard from '../global/common/gameCard'
 export default function Connect4() {
   return (
     <section className='content-container'>

@@ -1,7 +1,6 @@
-
-import DynamicButton from '../../Components/Global/Common/Button'
-import HeroContainer from '../../Components/Global/Common/HeroContainer'
-import TicTacToeComponent from '../../Components/TicTacToe'
+import DynamicButton from '@/components/global/common/button'
+import HeroContainer from '@/components/global/common/heroContainer'
+import TicTacToeComponent from '../../components/ticTacToe'
 import React from 'react'
 
 export default function TicTacToe() {
