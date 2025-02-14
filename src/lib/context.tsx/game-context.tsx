@@ -147,19 +147,20 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
   const handleMove = (col: number) => {
     if (gameOver) return;
   
-    const row = board.findIndex((r) => r[col] === '');
-  
+    const row = [...board].reverse().findIndex((r) => r[col] === '');
     if (row === -1) return; 
   
-    const newBoard = [...board];
-    newBoard[row][col] = currPlayer;
-    setBoard(newBoard);
+    const actualRow = numRows - 1 - row; 
 
+    const newBoard = [...board];
+    newBoard[actualRow][col] = currPlayer;
+    setBoard(newBoard);
+ 
     if (clickSound.current) {
       clickSound.current.play().catch(err => console.log('Error playing drop sound:', err));
     }
   
-    if (checkWin(newBoard, row, col)) {
+    if (checkWin(newBoard, actualRow, col)) {
       setGameOver(true);
       if (gameOverSound.current) {
         gameOverSound.current.play().catch(err => console.log('Error playing game over sound:', err));
@@ -167,8 +168,8 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     } else {
       setCurrPlayer(currPlayer === 'X' ? 'O' : 'X');
     }
-  };  
-
+  };
+  
   const checkWin = (board: string[][], row: number, col: number) => {
     const directions = [
       { r: 0, c: 1 }, 
