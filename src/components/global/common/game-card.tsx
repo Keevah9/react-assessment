@@ -16,7 +16,7 @@ const GameCard: React.FC<GameCardProps> = ({ title, content, img, url }) => {
     <Link href={url}>
       <div className="max-w-3xl mx-4 mx-auto mt-5">
         <motion.div
-          className="rounded-[15px] pb-5 relative border border-white/15 overflow-hidden min-h-auto lg:col-span-1 col-span-full"
+          className="rounded-[15px] pb-5 relative border border-white/50 overflow-hidden min-h-auto lg:col-span-1 col-span-full"
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
