@@ -22,7 +22,7 @@ export default function RootLayout({
         <ModalProvider>
         <GameProvider>
           <Header />
-          <main>{children}</main>
+          <main className="min-h-screen">{children}</main>
           <Footer />
         </GameProvider> 
         </ModalProvider>
