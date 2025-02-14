@@ -22,7 +22,7 @@ const LinkItem = ({ label, url }: LinkBlockProps) => {
 export default function LinkBlock() {
     return (
         <nav>
-            <ul className="flex !gap-6">
+            <ul className="flex flex-wrap  !gap-6">
                 {navData.map((item, index) => (
                     <LinkItem key={index} label={item.label} url={item.url} />
                 ))}
