@@ -17,7 +17,6 @@ export default function Connect4GameComponent() {
         <DynamicButton
           onClick={handleReset} 
           label="Restart"
-          buttonStyle="pt-4"
         />
       </div>
     </div>

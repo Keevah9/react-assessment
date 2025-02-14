@@ -12,7 +12,7 @@ export const Slot: React.FC<SlotProps> = ({ ch, x, y }) => {
 
   return (
     <div
-      className="slot w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center cursor-pointer"
+      className="w-16 h-16 bg-white rounded-full flex cursor-pointer"
       data-col={x}
       onClick={() => !gameOver && handleMove(x)}
     >
