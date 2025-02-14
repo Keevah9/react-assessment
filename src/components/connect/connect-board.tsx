@@ -1,9 +1,9 @@
 import { useGameContext } from "../../lib/context.tsx/game-context";
 import React from "react";
-import Modal from "../modal/modal-component";
 import { Slot } from "./slot";
+import Modalcomponent from "../modal/modal-component";
 
-const Board: React.FC = () => {
+const ConnectBoard: React.FC = () => {
   const { board, gameOver } = useGameContext();
 
   return (
@@ -13,9 +13,9 @@ const Board: React.FC = () => {
           <Slot key={`${rowIndex}-${colIndex}`} ch={ch} x={colIndex} y={rowIndex} />
         ))
       )}
-      {gameOver && <Modal title />}
+      {gameOver && <Modalcomponent title />}
     </div>
   );
 };
 
-export default Board;
+export default ConnectBoard;
