@@ -56,19 +56,11 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
       if (gameOverSound.current) gameOverSound.current.volume = 0.2;
       if (clickSound.current) clickSound.current.volume = 0.5;
     }
+    return () => {
+      if (gameOverSound.current) gameOverSound.current.pause();
+      if (clickSound.current) clickSound.current.pause();
+    };
   }, []);
-
-  useEffect(() => {
-    if (gameOver) {
-      const timer = setTimeout(() => {
-        setDelayedGameOver(true);
-      }, 1000); 
-
-      return () => clearTimeout(timer); 
-    } else {
-      setDelayedGameOver(false);
-    }
-  }, [gameOver]);
 
   function checkWinner(
     tiles: (string | null)[],
@@ -96,6 +88,20 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
       }
     }
   }
+
+  useEffect(() => {
+    if (gameOver) {
+      const timer = setTimeout(() => {
+        setDelayedGameOver(true);
+        checkWinner(tiles, setStrikeLine, setGameState); 
+      }, 1000); 
+  
+      return () => clearTimeout(timer);
+    } else {
+      setDelayedGameOver(false);
+    }
+  }, [gameOver, tiles, setStrikeLine, setGameState]);
+  
 
   const handleTileClick = (index: number) => {
     if (gameState !== GameState.inProgress || tiles[index] !== null) return;
