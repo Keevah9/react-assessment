@@ -1,6 +1,4 @@
 import React from "react";
-import redToken from "../../../public/img/redtoken.svg";
-import yellowToken from "../../../public/img/blacktoken.svg";
 import { useGameContext } from "@/lib/Context.tsx/gameContext";
 
 interface SlotProps {

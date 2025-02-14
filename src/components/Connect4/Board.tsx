@@ -3,7 +3,6 @@ import React from "react";
 import Modal from "../Modal/Modal";
 import { Slot } from "./Slot";
 
-
 const Board: React.FC = () => {
   const { board, gameOver } = useGameContext();
 

@@ -1,10 +1,10 @@
 "use client";
 
+import { useGameContext } from "@/lib/Context.tsx/gameContext";
 import React from "react";
 import DynamicButton from "../Global/Common/Button";
 import PageHeader from "../Global/Common/PageHeader";
 import Board from "./Board";
-import { useGameContext } from "@/lib/Context.tsx/gameContext";
 
 export default function Connect4GameComponent() {
   const { handleReset } = useGameContext(); 

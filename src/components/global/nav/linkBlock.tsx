@@ -1,4 +1,4 @@
-import { navData } from "../../../lib/data";
+import { navData } from "@/lib/data";
 import Link from "next/link";
 import React from "react";
 

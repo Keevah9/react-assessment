@@ -1,7 +1,6 @@
 import React from 'react'
 import PageHeader from '../Global/Common/PageHeader'
 import GameCard from '../Global/Common/GameCard'
-
 export default function Connect4() {
   return (
     <section className='content-container'>

@@ -1,8 +1,8 @@
 
 import Connect4GameComponent from '@/Components/Connect4';
-import DynamicButton from '../../Components/Global/Common/Button';
 import React from 'react';
-import HeroContainer from '../../Components/Global/Common/HeroContainer';
+import HeroContainer from '@/Components/Global/Common/HeroContainer';
+import DynamicButton from '@/Components/Global/Common/Button';
 
 export default function Connect4() {
   return (
