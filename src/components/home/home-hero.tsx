@@ -2,7 +2,7 @@
 import React from 'react'  
 import HeroContainer from '../global/common/hero-container'
 
-export default function Hero() {
+export default function HomeHero() {
 
   return (
     <HeroContainer img='/img/herobg.jpg'>
