@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import DynamicButton from "../Global/Common/Button";
 import GameOver from "../TicTacToe/GameOver";
-import { useGameContext } from "@/lib/Context.tsx/GameContext";
-import { useModalContext } from "@/lib/Context.tsx/ModalContext";
+import { useGameContext } from "../../lib/Context.tsx/GameContext";
+import { useModalContext } from "../../lib/Context.tsx/ModalContext";
 
 interface ModalProps {
   title?: boolean;

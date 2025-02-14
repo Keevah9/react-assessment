@@ -1,7 +1,7 @@
 'use client'
 
-import { useGameContext } from '@/lib/Context.tsx/GameContext';
-import { useModalContext } from '@/lib/Context.tsx/ModalContext';
+import { useGameContext } from '../../lib/Context.tsx/GameContext';
+import { useModalContext } from '../../lib/Context.tsx/ModalContext';
 import React, { useEffect, useRef } from 'react'
 import PageHeader from '../Global/Common/PageHeader';
 import Modal from '../Modal/Modal';

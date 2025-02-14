@@ -1,6 +1,6 @@
 "use client";
 
-import { useGameContext } from "@/lib/Context.tsx/GameContext";
+import { useGameContext } from "../../lib/Context.tsx/GameContext";
 import React from "react";
 import DynamicButton from "../Global/Common/Button";
 import PageHeader from "../Global/Common/PageHeader";

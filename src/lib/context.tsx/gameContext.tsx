@@ -1,6 +1,6 @@
 'use client';
 
-import { getWinningCombinations } from "@/Components/TicTacToe/GetWinningCombinations";
+import { getWinningCombinations } from "../../Components/TicTacToe/GetWinningCombinations";
 import { GameState } from "../../Components/TicTacToe/GameState";
 import React, { createContext, useState, useEffect, useContext, ReactNode, useRef } from "react";
 
