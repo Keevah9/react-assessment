@@ -1,4 +1,4 @@
-import Connect4 from "../components/connect4";
+import Connect4 from "../components/connect";
 import Hero from "../components/home/hero";
 import Tictactoe from "../components/home/ticTacToe";
 
