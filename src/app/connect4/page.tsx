@@ -1,5 +1,5 @@
 
-import Connect4GameComponent from '@/components/connect';
+import Connect4GameComponent from '../../components/connect';
 import DynamicButton from '../../components/global/common/button';
 import HeroContainer from '../../components/global/common/heroContainer';
 
