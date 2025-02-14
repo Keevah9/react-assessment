@@ -104,8 +104,7 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     setBoard(newBoard);
   
     if (checkWin(newBoard, row, col)) {
-      setGameOver(true);  
-      console.log(`${currPlayer} wins!`); 
+      setGameOver(true);
     } else {
       setCurrPlayer(currPlayer === 'X' ? 'O' : 'X');
     }
