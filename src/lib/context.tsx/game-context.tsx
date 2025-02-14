@@ -153,9 +153,16 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     const newBoard = [...board];
     newBoard[row][col] = currPlayer;
     setBoard(newBoard);
+
+    if (clickSound.current) {
+      clickSound.current.play().catch(err => console.log('Error playing drop sound:', err));
+    }
   
     if (checkWin(newBoard, row, col)) {
       setGameOver(true);
+      if (gameOverSound.current) {
+        gameOverSound.current.play().catch(err => console.log('Error playing game over sound:', err));
+      }
     } else {
       setCurrPlayer(currPlayer === 'X' ? 'O' : 'X');
     }
