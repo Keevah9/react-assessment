@@ -12,7 +12,9 @@ export default function Connect4() {
         <h1 className="!text-center">Connect 4</h1>
         <div className="mt-5">
           <p className='mb-5'>Enjoy the Connect 4 Game</p>
-          <DynamicButton label="Play" link="#play-connect4" />
+          <div className=' flex flex-col text-center items-center justify-center'>
+            <DynamicButton label="Play" link="#play-connect4" />
+          </div>
         </div>
       </HeroContainer>
 
