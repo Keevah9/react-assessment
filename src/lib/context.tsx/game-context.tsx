@@ -42,6 +42,7 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
   //connect 4
   const [board, setBoard] = useState<string[][]>(Array.from({ length: numRows }, () => Array(numCols).fill('')));
 
+  //sound effect
   const gameOverSound = useRef<HTMLAudioElement | null>(null);
   const clickSound = useRef<HTMLAudioElement | null>(null);
 
