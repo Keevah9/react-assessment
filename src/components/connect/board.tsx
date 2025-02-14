@@ -1,6 +1,6 @@
 import { useGameContext } from "../../lib/context.tsx/game-context";
 import React from "react";
-import Modal from "../modal/modal";
+import Modal from "../modal/modal-component";
 import { Slot } from "./slot";
 
 const Board: React.FC = () => {

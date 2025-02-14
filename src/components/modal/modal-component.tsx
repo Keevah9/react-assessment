@@ -9,7 +9,7 @@ interface ModalProps {
   title?: boolean;
 }
 
-const Modal = ({ title }: ModalProps) => {
+const Modalcomponent = ({ title }: ModalProps) => {
   const { hideModal } = useModalContext();
   const { handleReset, gameState, currPlayer} = useGameContext();
 const close = () => {
@@ -40,4 +40,4 @@ const close = () => {
   );
 };
 
-export default Modal;
+export default Modalcomponent;

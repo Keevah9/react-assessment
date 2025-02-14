@@ -4,7 +4,7 @@ import { useGameContext } from '../../lib/context.tsx/game-context';
 import { useModalContext } from '../../lib/context.tsx/modal-context';
 import React, { useEffect, useRef } from 'react'
 import PageHeader from '../global/common/page-header';
-import Modal from '../modal/modal';
+import Modal from '../modal/modal-component';
 import Board from './board';
 import { GameState } from './game-state';
 
