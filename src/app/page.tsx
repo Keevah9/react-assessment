@@ -1,13 +1,13 @@
-import Hero from "../components/home/Hero";
-import Snake from "../components/home/Snake";
-import Tictactoe from "../components/home/TicTacToe";
+import Hero from "../Components/Home/Hero";
+import Connect4 from "../Components/Home/Connect4";
+import Tictactoe from "../Components/Home/TicTacToe";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Hero />
       <Tictactoe />
-      <Snake />
+      <Connect4 />
     </div>
   );
 }

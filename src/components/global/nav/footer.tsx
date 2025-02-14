@@ -1,5 +1,5 @@
 import React from 'react'
-import LinkBlock from './linkBlock'
+import LinkBlock from './LinkBlock'
 
 export default function Footer() {
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Tile from "./Tile";
 import Strike from "./Strike";
 
@@ -12,7 +12,7 @@ interface BoardProps {
 
 const Board: React.FC<BoardProps> = ({ tiles, onTileClick, player,  strikeLine}) => {
   return (
-    <div data-testid="board"
+    <div
       className="grid mx-auto w-fit place-content-center cursor-pointer relative"
       style={{
 
@@ -21,7 +21,7 @@ const Board: React.FC<BoardProps> = ({ tiles, onTileClick, player,  strikeLine})
       }}
     >
       {tiles.map((tileValue, index) => (
-        <Tile   player={player} data-testid={`tile-${index}`} onClick={() => onTileClick(index)}
+        <Tile player={player} onClick={() => onTileClick(index)}
           key={index}
           className={`border-white ${
             index < 6 ? "border-b-2" : ""

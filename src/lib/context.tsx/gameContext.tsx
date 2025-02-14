@@ -1,11 +1,15 @@
 'use client';
 
-import { getWinningCombinations } from "@/components/ticTacToe/GetWinningCombinations";
-import { GameState } from "../../components/ticTacToe/GameState";
+import { getWinningCombinations } from "@/Components/TicTacToe/GetWinningCombinations";
+import { GameState } from "../../Components/TicTacToe/GameState";
 import React, { createContext, useState, useEffect, useContext, ReactNode, useRef } from "react";
 
 const player_X = "X";
 const player_O = "O";
+const grid_Size = 20;
+const numRows = 6;
+const numCols = 7;
+
 
 interface GameContextType {
   tiles: (string | null)[];
@@ -15,6 +19,15 @@ interface GameContextType {
   gameState: GameState;
   handleTileClick: (index: number) => void;
   handleReset: () => void;
+  gameOver: boolean;
+  handleMove: (col: number) => void;
+//   currentPlayer: string;
+  resetGame: () => void;
+    board: string[][];
+    currPlayer: string;
+    setBoard: React.Dispatch<React.SetStateAction<string[][]>>;
+    setCurrPlayer: React.Dispatch<React.SetStateAction<string>>;
+    setGameOver: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const GameContext = createContext<GameContextType | undefined>(undefined);
@@ -24,6 +37,12 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
   const [player, setPlayer] = useState(player_X);
   const [strikeLine, setStrikeLine] = useState<string | null>(null);
   const [gameState, setGameState] = useState(GameState.inProgress);
+  const [gameOver, setGameOver] = useState(false);
+
+  //connect 4
+  const [board, setBoard] = useState<string[][]>(Array.from({ length: numRows }, () => Array(numCols).fill('')));
+  
+  const [currPlayer, setCurrPlayer] = useState('X');
 
   const gameOverSound = useRef<HTMLAudioElement | null>(null);
   const clickSound = useRef<HTMLAudioElement | null>(null);
@@ -74,11 +93,37 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     setPlayer(player === player_X ? player_O : player_X);
   };
 
+  const handleMove = (col: number) => {
+    if (gameOver) return; // Prevent moves if the game is over
+  
+    // Find the first available row in the chosen column
+    const row = board.findIndex((r) => r[col] === '');
+  
+    if (row === -1) return; // Column is full, no move can be made
+  
+    // Place the token in the first available row
+    const newBoard = [...board];
+    newBoard[row][col] = currPlayer;
+    setBoard(newBoard);
+  
+    // Check for a win after the move
+    if (checkWin(newBoard, row, col)) {
+      setGameOver(true);  // Set game over when there's a winner
+      console.log(`${currPlayer} wins!`); // Display the winner in the console (you can replace this with UI)
+    } else {
+      // Switch players if no winner yet
+      setCurrPlayer(currPlayer === 'X' ? 'O' : 'X');
+    }
+  };  
+
   const handleReset = () => {
     setGameState(GameState.inProgress);
     setTiles(Array(9).fill(null));
     setPlayer(player_X);
     setStrikeLine(null);
+    setBoard(Array.from({ length: numRows }, () => Array(numCols).fill('')));
+    setGameOver(false);
+    setCurrPlayer('X');
   };
 
   useEffect(() => {
@@ -121,8 +166,58 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [gameState]);
 
+  const checkWin = (board: string[][], row: number, col: number) => {
+    const directions = [
+      { r: 0, c: 1 }, // Horizontal
+      { r: 1, c: 0 }, // Vertical
+      { r: 1, c: 1 }, // Diagonal /
+      { r: 1, c: -1 }, // Diagonal \
+    ];
+  
+    const target = board[row][col];
+  
+    // Check in each direction for 4 consecutive tokens
+    for (const { r, c } of directions) {
+      let count = 1;
+  
+      // Check in the positive direction (e.g., to the right, down, etc.)
+      for (let i = 1; i < 4; i++) {
+        const newRow = row + r * i;
+        const newCol = col + c * i;
+        if (newRow < 0 || newRow >= numRows || newCol < 0 || newCol >= numCols || board[newRow][newCol] !== target) break;
+        count++;
+      }
+  
+      // Check in the negative direction (e.g., to the left, up, etc.)
+      for (let i = 1; i < 4; i++) {
+        const newRow = row - r * i;
+        const newCol = col - c * i;
+        if (newRow < 0 || newRow >= numRows || newCol < 0 || newCol >= numCols || board[newRow][newCol] !== target) break;
+        count++;
+      }
+  
+      if (count >= 4) return true;
+    }
+  
+    return false;
+  };
+  
+
   return (
-    <GameContext.Provider value={{ tiles, player, strikeLine, gameState, handleTileClick, handleReset }}>
+    <GameContext.Provider value={{  board, 
+        currPlayer, 
+        gameOver, 
+        setBoard, 
+        setCurrPlayer, 
+        setGameOver, 
+        handleMove, // Pass the correct handleMove function here
+        tiles, 
+        player, 
+        strikeLine, 
+        gameState, 
+        handleTileClick, 
+        handleReset,
+        resetGame: handleReset  }}>
       {children}
     </GameContext.Provider>
   );

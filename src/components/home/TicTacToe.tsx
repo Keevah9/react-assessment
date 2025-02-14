@@ -1,6 +1,6 @@
 import React from 'react'
-import PageHeader from '../global/common/pageHeader';
-import GameCard from '../global/common/gameCard';
+import PageHeader from '../Global/Common/PageHeader'
+import GameCard from '../Global/Common/GameCard'
 
 export default function Tictactoe() {
   return (

@@ -1,13 +1,17 @@
-import { useGameContext } from "../../lib/context.tsx/gameContext";
-import { useModalContext } from "../../lib/context.tsx/modalContext";
+import { useGameContext } from "../../lib/Context.tsx/gameContext";
+import { useModalContext } from "../../lib/Context.tsx/modalContext";
 import React from "react";
 import { motion } from "framer-motion";
-import DynamicButton from "../global/common/button";
-import GameOver from "../ticTacToe/GameOver";
+import DynamicButton from "../Global/Common/Button";
+import GameOver from "../TicTacToe/GameOver";
 
-const Modal = () => {
+interface ModalProps {
+  title?: boolean;
+}
+
+const Modal = ({ title }: ModalProps) => {
   const { hideModal } = useModalContext();
-  const { handleReset, gameState } = useGameContext();
+  const { handleReset, gameState, currPlayer} = useGameContext();
 const close = () => {
   hideModal();
   handleReset()
@@ -23,9 +27,9 @@ const close = () => {
         className="bg-white relative p-6 w-[80%] h-[40vh] md:w-4xl flex flex-col justify-center items-center rounded-2xl shadow-lg text-center"
       >
         
-        <GameOver 
+        {title  ? `${currPlayer === 'X' ? 'O' : 'X'} wins!` :  <GameOver 
         // @ts-ignore
-        gameState={gameState} />
+        gameState={gameState} />   }
         <div className="mt-4 gap-3">
             <p className="absolute cursor-pointer font-bold px-4 py-2 top-10 right-10 text-2xl bg-black rounded-full !text-white" onClick={close} style={{cursor: 'pointer'
             }}> X</p>

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "../components/global/nav/header";
-import Footer from "../components/global/nav/footer";
-import { GameProvider } from "../lib/context.tsx/gameContext";
-import { ModalProvider } from "../lib/context.tsx/modalContext";
+import Header from "../Components/Global/Nav/Header";
+import Footer from "../Components/Global/Nav/Footer";
+import { GameProvider } from "../lib/Context.tsx/gameContext";
+import { ModalProvider } from "../lib/Context.tsx/modalContext";
 import React from "react";
 
 export const metadata: Metadata = {

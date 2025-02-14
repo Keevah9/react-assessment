@@ -1,6 +1,6 @@
 'use client'
-import React from 'react'
-import HeroContainer from '../global/common/heroContainer';    
+import React from 'react'   
+import HeroContainer from '../Global/Common/HeroContainer'
 
 export default function Hero() {
 

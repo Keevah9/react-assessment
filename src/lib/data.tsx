@@ -11,7 +11,7 @@ export const navData = [
     },
     {
         id: 3,
-        label: 'Snake',
-        url: '/snake'
+        label: 'Connect4',
+        url: '/Connect4'
     },
 ]
