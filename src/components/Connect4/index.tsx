@@ -13,7 +13,7 @@ export default function Connect4GameComponent() {
     <div>
       <PageHeader title="Connect 4" />
       <Board />
-      <div className="flex w-full flex-col justify-center pt-6">
+      <div className="flex w-full flex-col items-center justify-center pt-6">
         <DynamicButton
           onClick={handleReset} 
           label="Restart"

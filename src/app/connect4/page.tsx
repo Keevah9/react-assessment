@@ -15,7 +15,7 @@ export default function Connect4() {
         </div>
       </HeroContainer>
 
-      <section id="play-connect4" className="content-container">
+      <section id="play-connect4" className=" max-w-3xl mx-auto content-container">
         <Connect4GameComponent />
       </section>
     </>
