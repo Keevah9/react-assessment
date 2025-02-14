@@ -9,7 +9,6 @@ interface BoardProps {
   strikeLine?: string;
 }
 
-
 const Board: React.FC<BoardProps> = ({ tiles, onTileClick, player,  strikeLine}) => {
   return (
     <div
