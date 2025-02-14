@@ -21,13 +21,12 @@ interface GameContextType {
   handleReset: () => void;
   gameOver: boolean;
   handleMove: (col: number) => void;
-//   currentPlayer: string;
   resetGame: () => void;
-    board: string[][];
-    currPlayer: string;
-    setBoard: React.Dispatch<React.SetStateAction<string[][]>>;
-    setCurrPlayer: React.Dispatch<React.SetStateAction<string>>;
-    setGameOver: React.Dispatch<React.SetStateAction<boolean>>
+  board: string[][];
+  currPlayer: string;
+  setBoard: React.Dispatch<React.SetStateAction<string[][]>>;
+  setCurrPlayer: React.Dispatch<React.SetStateAction<string>>;
+  setGameOver: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const GameContext = createContext<GameContextType | undefined>(undefined);
@@ -94,24 +93,20 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const handleMove = (col: number) => {
-    if (gameOver) return; // Prevent moves if the game is over
+    if (gameOver) return;
   
-    // Find the first available row in the chosen column
     const row = board.findIndex((r) => r[col] === '');
   
-    if (row === -1) return; // Column is full, no move can be made
+    if (row === -1) return; 
   
-    // Place the token in the first available row
     const newBoard = [...board];
     newBoard[row][col] = currPlayer;
     setBoard(newBoard);
   
-    // Check for a win after the move
     if (checkWin(newBoard, row, col)) {
-      setGameOver(true);  // Set game over when there's a winner
-      console.log(`${currPlayer} wins!`); // Display the winner in the console (you can replace this with UI)
+      setGameOver(true);  
+      console.log(`${currPlayer} wins!`); 
     } else {
-      // Switch players if no winner yet
       setCurrPlayer(currPlayer === 'X' ? 'O' : 'X');
     }
   };  
@@ -168,19 +163,18 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
 
   const checkWin = (board: string[][], row: number, col: number) => {
     const directions = [
-      { r: 0, c: 1 }, // Horizontal
-      { r: 1, c: 0 }, // Vertical
-      { r: 1, c: 1 }, // Diagonal /
-      { r: 1, c: -1 }, // Diagonal \
+      { r: 0, c: 1 }, 
+      { r: 1, c: 0 }, 
+      { r: 1, c: 1 },
+      { r: 1, c: -1 }, 
     ];
   
     const target = board[row][col];
   
-    // Check in each direction for 4 consecutive tokens
     for (const { r, c } of directions) {
       let count = 1;
   
-      // Check in the positive direction (e.g., to the right, down, etc.)
+      // Check to the right, down
       for (let i = 1; i < 4; i++) {
         const newRow = row + r * i;
         const newCol = col + c * i;
@@ -188,7 +182,7 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
         count++;
       }
   
-      // Check in the negative direction (e.g., to the left, up, etc.)
+      // Check to the left, up
       for (let i = 1; i < 4; i++) {
         const newRow = row - r * i;
         const newCol = col - c * i;
@@ -210,7 +204,7 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
         setBoard, 
         setCurrPlayer, 
         setGameOver, 
-        handleMove, // Pass the correct handleMove function here
+        handleMove, 
         tiles, 
         player, 
         strikeLine, 
