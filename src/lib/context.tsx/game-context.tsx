@@ -6,7 +6,6 @@ import React, { createContext, useState, useEffect, useContext, ReactNode, useRe
 
 const player_X = "X";
 const player_O = "O";
-const grid_Size = 20;
 const numRows = 6;
 const numCols = 7;
 
