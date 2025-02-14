@@ -18,7 +18,7 @@ export const Slot: React.FC<SlotProps> = ({ ch, x, y }) => {
     >
       {ch && (
         <img
-          src={ch === "X" ? "/img/redToken.svg" : "/img/blacktoken.svg"}
+          src={ch === "X" ? "/img/redtoken.svg" : "/img/blacktoken.svg"}
           alt={ch}
           className="w-full h-full"
         />
