@@ -1,7 +1,8 @@
 
+import Connect4GameComponent from '@/components/connect';
 import DynamicButton from '../../components/global/common/button';
 import HeroContainer from '../../components/global/common/heroContainer';
-import Connect4GameComponent from '../../components/connect/index';
+
 import React from 'react';
 
 export default function Connect4() {
@@ -15,7 +16,7 @@ export default function Connect4() {
         </div>
       </HeroContainer>
 
-      <section id="play-connect4" className=" max-w-3xl mx-auto content-container">
+      <section id="play-connect4" className=" !max-w-2xl mx-auto !content-container">
         <Connect4GameComponent />
       </section>
     </>
