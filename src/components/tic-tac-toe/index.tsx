@@ -1,12 +1,12 @@
 'use client'
 
-import { useGameContext } from '../../lib/context.tsx/gameContext';
-import { useModalContext } from '../../lib/context.tsx/modalContext';
+import { useGameContext } from '../../lib/context.tsx/game-context';
+import { useModalContext } from '../../lib/context.tsx/modal-context';
 import React, { useEffect, useRef } from 'react'
-import PageHeader from '../global/common/pageHeader';
+import PageHeader from '../global/common/page-header';
 import Modal from '../modal/modal';
 import Board from './board';
-import { GameState } from './gameState';
+import { GameState } from './game-state';
 
 export default function TicTacToeComponent() {
   const { show, showModal, setModalMode } = useModalContext();

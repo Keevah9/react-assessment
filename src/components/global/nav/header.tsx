@@ -1,5 +1,5 @@
 import React from 'react'
-import LinkBlock from './linkBlock'
+import LinkBlock from './link-block'
 
 export default function Header() {
   return (

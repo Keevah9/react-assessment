@@ -1,5 +1,5 @@
 import React from "react";
-import { GameState } from "./gameState";
+import { GameState } from "./game-state";
 
 
 interface GameOverProps {

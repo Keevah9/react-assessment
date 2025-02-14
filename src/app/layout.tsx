@@ -3,8 +3,8 @@ import "./globals.css";
 import React from "react";
 import Footer from "../components/global/nav/footer";
 import Header from "../components/global/nav/header";
-import { GameProvider } from "../lib/context.tsx/gameContext";
-import { ModalProvider } from "../lib/context.tsx/modalContext";
+import { GameProvider } from "../lib/context.tsx/game-context";
+import { ModalProvider } from "../lib/context.tsx/modal-context";
 
 export const metadata: Metadata = {
   title: "React games assessment",

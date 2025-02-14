@@ -1,7 +1,7 @@
 'use client';
 
-import { getWinningCombinations } from "../../components/ticTacToe/getWinningCombinations";
-import { GameState } from "../../components/ticTacToe/gameState";
+import { getWinningCombinations } from "../../components/tic-tac-toe/get-winning-combinations";
+import { GameState } from "../../components/tic-tac-toe/game-state";
 import React, { createContext, useState, useEffect, useContext, ReactNode, useRef } from "react";
 
 const player_X = "X";

@@ -1,5 +1,5 @@
 import React from "react";
-import { useGameContext } from "../../lib/context.tsx/gameContext";
+import { useGameContext } from "../../lib/context.tsx/game-context";
 
 interface SlotProps {
   ch: string;

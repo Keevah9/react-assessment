@@ -1,4 +1,4 @@
-import { useGameContext } from "../../lib/context.tsx/gameContext";
+import { useGameContext } from "../../lib/context.tsx/game-context";
 import React from "react";
 import Modal from "../modal/modal";
 import { Slot } from "./slot";
