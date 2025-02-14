@@ -1,5 +1,5 @@
-import DynamicButton from '@/components/global/common/button'
-import HeroContainer from '@/components/global/common/heroContainer'
+import DynamicButton from '../../components/global/common/button'
+import HeroContainer from '../../components/global/common/heroContainer'
 import TicTacToeComponent from '../../components/ticTacToe'
 import React from 'react'
 

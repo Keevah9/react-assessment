@@ -1,6 +1,6 @@
 
-import DynamicButton from '@/components/global/common/button';
-import HeroContainer from '@/components/global/common/heroContainer';
+import DynamicButton from '../../components/global/common/button';
+import HeroContainer from '../../components/global/common/heroContainer';
 import Connect4GameComponent from '../../components/connect4/index';
 import React from 'react';
 
