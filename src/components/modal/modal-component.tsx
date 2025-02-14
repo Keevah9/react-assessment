@@ -27,7 +27,7 @@ const close = () => {
         className="bg-white relative p-6 w-[80%] h-[40vh] md:w-4xl flex flex-col justify-center items-center rounded-2xl shadow-lg text-center"
       >
         
-        {title  ? `${currPlayer === 'X' ? 'O' : 'X'} wins!` :  <GameOver 
+        {title  ? `${currPlayer === 'X' ? 'Red' : 'Black'} wins!` :  <GameOver 
         // @ts-ignore
         gameState={gameState} />   }
         <div className="mt-4 gap-3">
