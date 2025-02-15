@@ -54,9 +54,6 @@
     opacity: 0.4;
   }
 
-  .strike {
-    @apply absolute bg-white;
-  }
   .strike-row-1{
     @apply w-full h-1 top-[15%];
   };
