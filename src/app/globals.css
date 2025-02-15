@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,8 +11,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000;
-    --foreground: #ededed;
+    --background: #171717;
+    --foreground: #ffffff;
   }
 }
 
@@ -23,7 +22,7 @@
   color: var(--foreground);
   background: var(--background);
   font-family: "Quicksand", sans-serif;
-  @apply !bg-black !text-[13px] lg:!text-[15px] relative;
+  @apply !text-[13px] lg:!text-[15px] relative;
  }
 }
 
