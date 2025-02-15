@@ -32,7 +32,7 @@ const close = () => {
         <div className="mt-4 gap-3">
             <p className="absolute cursor-pointer font-bold px-4 py-2 top-10 right-10 text-2xl bg-black rounded-full !text-white" onClick={close} style={{cursor: 'pointer'
             }}> X</p>
-         <DynamicButton aria-label="reset"  onClick={close} label="Restart" buttonStyle=" !bg-black text-white" />
+         <DynamicButton aria-label="restart"  onClick={close} label="Restart" buttonStyle=" !bg-black text-white" />
         </div>
       </motion.div>
     </div>

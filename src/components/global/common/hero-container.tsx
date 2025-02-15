@@ -18,7 +18,7 @@ const HeroContainer: React.FC<HeroContainerProps> = ({ img, children }) => {
   return (
     <div
       style={img ? { backgroundImage: `url(${img})` } : {}}
-      className="text-center flex justify-center items-center flex-col h-[600px] lg:h-screen py-16 lg:py-32 bg-cover bg-center"
+      className="flex justify-center items-center flex-col h-[600px] lg:h-screen bg-cover bg-center"
     >
       <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit">
         {children}

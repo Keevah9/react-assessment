@@ -15,8 +15,7 @@ export const Slot: React.FC<SlotProps> = ({ ch, x, y }) => {
     <div
       className="w-16 h-16 bg-white rounded-full flex cursor-pointer relative"
       data-col={x}
-      onClick={() => !gameOver && handleMove(x)}
-    >
+      onClick={() => !gameOver && handleMove(x)}>
       {ch && (
         <motion.img
           src={ch === "X" ? "/img/redtoken.svg" : "/img/blacktoken.svg"}
