@@ -22,7 +22,7 @@ const Board: React.FC<BoardProps> = ({ tiles, onTileClick, player,  strikeLine})
       {tiles.map((tileValue, index) => (
         <Tile player={player} onClick={() => onTileClick(index)}
           key={index}
-          className={`border-white ${
+          className={` border-uiblack dark:border-uiwhite ${
             index < 6 ? "border-b-2" : ""
           } ${index % 3 !== 2 ? "border-r-2" : ""}`}
           value={tileValue}

@@ -10,10 +10,10 @@ interface ButtonProps {
 }
 
 const DynamicButton: React.FC<ButtonProps> = ({ label, link, buttonStyle, onClick }) => {
-  const buttonClasses = `w-[180px] rounded-full py-3.5 font-bold cursor-pointer bg-white text-black hover:bg-transparent hover:text-white transition duration-300 ${buttonStyle}`;
+  const buttonClasses = `w-[180px] rounded-full py-3.5 font-bold cursor-pointer  bg-uiblack text-uiblack dark:bg-uiwhite dark:text-uiblack hover:bg-transparent dark:hover:text-white hover:text-black transition duration-300 ${buttonStyle}`;
 
   const renderButton = () => (
-    <button onClick={onClick} className={`${buttonClasses} ${link && 'hover:border '}`} aria-label={label}>
+    <button onClick={onClick} className={`${buttonClasses} ${link && 'dark:hover:border-uiwhite hover:border-uiblack '}`} aria-label={label}>
       {label}
     </button>
   );

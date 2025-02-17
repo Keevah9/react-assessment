@@ -9,9 +9,9 @@ export default function Connect4() {
   return (
     <>
       <HeroContainer img="/img/connect.jpg">
-        <h1 className="!text-center">Connect 4</h1>
+        <h1 className="text-uiwhite !text-center">Connect 4</h1>
         <div className="mt-5">
-          <p className='mb-5'>Enjoy the Connect 4 Game</p>
+          <p className='mb-5 text-uiwhite'>Enjoy the Connect 4 Game</p>
           <div className=' flex flex-col text-center items-center justify-center'>
             <DynamicButton label="Play" link="#play-connect4" />
           </div>

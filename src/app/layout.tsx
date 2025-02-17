@@ -8,7 +8,7 @@ import { ModalProvider } from "../lib/context.tsx/modal-context";
 
 export const metadata: Metadata = {
   title: "React games assessment",
-  description: "Games created with react.js/next.js and Tailwind css",
+  description: "Games created with react.js/next.js, typescript and Tailwind css",
 };
 
 export default function RootLayout({

@@ -6,7 +6,7 @@ interface StrikeProps {
 
 const Strike: React.FC<StrikeProps> = ({ strikeLine }) => {
   return (
-    <div className={`bg-white absolute ${strikeLine}`}></div>
+    <div className={` bg-uiblack dark:bg-uiwhite absolute ${strikeLine}`}></div>
   );
 };
 

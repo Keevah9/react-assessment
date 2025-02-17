@@ -7,7 +7,7 @@ const ConnectBoard: React.FC = () => {
   const { board, delayedGameOver } = useGameContext();
 
   return (
-    <div className="grid w-full grid-cols-7 gap-2 place-items-center border-4 rounded-lg">
+    <div className="grid w-full grid-cols-7 gap-2 place-items-center border-4 border-uiblack dark:border-white rounded-lg">
       {board.map((row, rowIndex) =>
         row.map((ch, colIndex) => (
           <Slot key={`${rowIndex}-${colIndex}`} ch={ch} x={colIndex} y={rowIndex} />

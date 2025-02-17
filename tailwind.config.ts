@@ -22,13 +22,12 @@ export default {
   	},
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        uiblack: "#000",
+        uiwhite: "#fff",
       },
     },
     fontFamily: {
-      quicksand: ["Quicksand", ...defaultTheme.fontFamily.sans],
-      jar: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
+      quicksand: ["Quicksand", ...defaultTheme.fontFamily.sans]
       },
   },
   plugins: [],
